@@ -62,15 +62,13 @@
 			</div>
 		</div>
 		<div class="container">
-			<form>
-				<label><input type="radio" name="dataset" value="All" checked>All</label>
-				<label><input type="radio" name="dataset" value="GPMS" >GPMS</label>
-				<label><input type="radio" name="dataset" value="GMS" >GMS</label>
-				<label><input type="radio" name="dataset" value="GMS" >PMS</label>
+			<form id="gender_form">
+				<label><input class="gender" type="radio" name="dataset" value="All" checked>All</label>
+				<label><input class="gender" type="radio" name="dataset" value="Male" >Male</label>
+				<label><input class="gender" type="radio" name="dataset" value="Female" >Female</label>
 			</form>
 			<h1>What do GPs spend their expense claims on?</h1>
 			<div class="pie">
-				<!--<h2>Hover over chart</h2>-->
 				<p>Hover over chart to see more details</p>
 			</div>
 		</div>
@@ -78,7 +76,23 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
 		<script type="text/javascript">
-			var myData = 	[	{"label":"Office and General Business", "value":0},
+			var allData = 	[	{"label":"Office and General Business", "value":0},
+						{"label":"Premises Expenses", "value":0},
+						{"label":"Employee Expenses", "value":0},
+						{"label":"Car and Travel Expenses", "value":0},
+						{"label":"Interest Expenses", "value":0},
+						{"label":"Other Expenses", "value":0}
+					];
+
+			var maleData = 	[	{"label":"Office and General Business", "value":0},
+						{"label":"Premises Expenses", "value":0},
+						{"label":"Employee Expenses", "value":0},
+						{"label":"Car and Travel Expenses", "value":0},
+						{"label":"Interest Expenses", "value":0},
+						{"label":"Other Expenses", "value":0}
+					];
+
+			var femaleData = 	[	{"label":"Office and General Business", "value":0},
 						{"label":"Premises Expenses", "value":0},
 						{"label":"Employee Expenses", "value":0},
 						{"label":"Car and Travel Expenses", "value":0},
@@ -99,32 +113,62 @@
 						switch(k) {
 							case "Average_Office_and_General_Business_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									myData[0].value += v;		
+									allData[0].value += v;
+									if(items[0][i].Gender == "Male") {
+										maleData[0].value += v;
+									} else if(items[0][i].Gender == "Female") {
+										femaleData[0].value += v;
+									}
 								}
 							break;
 							case "Average_Premises_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									myData[1].value += v;		
+									allData[1].value += v;		
+									if(items[0][i].Gender == "Male") {
+										maleData[1].value += v;
+									} else if(items[0][i].Gender == "Female") {
+										femaleData[1].value += v;
+									}
 								}
 							break;
 							case "Average_Employee_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									myData[2].value += v;		
+									allData[2].value += v;	
+									if(items[0][i].Gender == "Male") {
+										maleData[2].value += v;
+									} else if(items[0][i].Gender == "Female") {
+										femaleData[2].value += v;
+									}
 								}
 							break;
 							case "Average_Car_and_Travel_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									myData[3].value += v;		
+									allData[3].value += v;
+									if(items[0][i].Gender == "Male") {
+										maleData[3].value += v;
+									} else if(items[0][i].Gender == "Female") {
+										femaleData[3].value += v;
+									}	
 								}
 							break;
 							case "Average_Interest_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									myData[4].value += v;		
+									allData[4].value += v;
+									if(items[0][i].Gender == "Male") {
+										maleData[4].value += v;
+									} else if(items[0][i].Gender == "Female") {
+										femaleData[4].value += v;
+									}		
 								}
 							break;							
 							case "Average_Other_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									myData[5].value += v;		
+									allData[5].value += v;
+									if(items[0][i].Gender == "Male") {
+										maleData[5].value += v;
+									} else if(items[0][i].Gender == "Female") {
+										femaleData[5].value += v;
+									}		
 								}
 							break;
 
@@ -132,9 +176,9 @@
 
 					});				
 				}
-				draw();	
+				draw(getCurrentDataset());	
 			});
-			function draw() { 
+			function draw(drawingData) { 
 				var 	w = 800, 
 						h = 400, 
 						r = Math.min(w, h)/2,
@@ -143,7 +187,7 @@
 
 				var vis = d3.select("div.pie")
 					.append("svg:svg")
-					.data([myData])
+					.data([drawingData])
 						.attr("width", w)
 						.attr("height", h)
 					.append("svg:g")
@@ -171,11 +215,12 @@
 
 				d3.selectAll(".slice").on("mouseover", function(d) {
 					var percentage = calculatePercentage(d.value);
-					console.log(d)
 					d3.select(".pie p")
 						.html(percentage + "% of GP expense money was spent on " + d.data.label + " that's a staggering £" + d.value);
-					//d3.select(".pie h2")
-					//	.html(d.data.label);
+				});
+
+				d3.selectAll(".gender").on("change", function() {
+					draw(getCurrentDataset());
 				});
 
 	
@@ -197,15 +242,27 @@
 				      .attr("x", 24)
 				      .attr("y", 9)
 				      .attr("dy", ".35em")
-				      .text(function(d) { return myData[d].label; });
+				      .text(function(d) { return allData[d].label; });
 			
 
 			}
 
+			function getCurrentDataset() {
+				var gender = $('input[name=dataset]:checked', '#gender_form').val();
+				if(gender == 'All') {
+					return allData;
+				} else if(gender == 'Male') {
+					return maleData;
+				} else if(gender == 'Female') {
+					return femaleData;
+				}
+				
+			}
+
 			function calculatePercentage(number) {
 				var sum = 0;
-				for(var i = 0; i < myData.length; i++) {
-					sum += myData[i].value;
+				for(var i = 0; i < getCurrentDataset().length; i++) {
+					sum += getCurrentDataset()[i].value;
 				}
 				return ((number/sum) * 100).toFixed(2);
 			}
