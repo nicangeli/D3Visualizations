@@ -15,8 +15,31 @@
 			.legend {
 				position: absolute;
 				top: 140px; 
-				left: 820px;		
+				left: 520px;		
 			}
+			body {
+			  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			  margin: auto;
+			  position: relative;
+			  width: 960px;
+			}
+
+			text {
+			  font: 10px sans-serif;
+			}
+
+			form {
+			  position: absolute;
+			  left: 520px;
+			  top: 400px;
+			}
+
+			.pie p {
+				position: absolute;
+				top: 300px;
+				left: 520px;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -39,8 +62,16 @@
 			</div>
 		</div>
 		<div class="container">
-			<h1>On what do GPs spend their expense claims?</h1>
+			<form>
+				<label><input type="radio" name="dataset" value="All" checked>All</label>
+				<label><input type="radio" name="dataset" value="GPMS" >GPMS</label>
+				<label><input type="radio" name="dataset" value="GMS" >GMS</label>
+				<label><input type="radio" name="dataset" value="GMS" >PMS</label>
+			</form>
+			<h1>What do GPs spend their expense claims on?</h1>
 			<div class="pie">
+				<!--<h2>Hover over chart</h2>-->
+				<p>Hover over chart to see more details</p>
 			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -105,9 +136,9 @@
 			});
 			function draw() { 
 				var 	w = 800, 
-					h = 400, 
-					r = 200,
-					color = d3.scale.category20();
+						h = 400, 
+						r = Math.min(w, h)/2,
+						color = d3.scale.category20();
 
 
 				var vis = d3.select("div.pie")
@@ -121,7 +152,8 @@
 
 
 				var arc = d3.svg.arc()
-					.outerRadius(r);
+					.outerRadius(r)
+					.innerRadius(r-110)
 
 				var pie = d3.layout.pie()
 					.value(function(d) { return d.value } );
@@ -137,6 +169,14 @@
 					.attr("fill", function(d, i) { return color(i); } )
 					.attr("d", arc);
 
+				d3.selectAll(".slice").on("mouseover", function(d) {
+					var percentage = calculatePercentage(d.value);
+					console.log(d)
+					d3.select(".pie p")
+						.html(percentage + "% of GP expense money was spent on " + d.data.label + " that's a staggering £" + d.value);
+					//d3.select(".pie h2")
+					//	.html(d.data.label);
+				});
 
 	
 				var legend = d3.select("div.pie").append("svg")
@@ -160,6 +200,14 @@
 				      .text(function(d) { return myData[d].label; });
 			
 
+			}
+
+			function calculatePercentage(number) {
+				var sum = 0;
+				for(var i = 0; i < myData.length; i++) {
+					sum += myData[i].value;
+				}
+				return ((number/sum) * 100).toFixed(2);
 			}
 		</script>
 	</body>
