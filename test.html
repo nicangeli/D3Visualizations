@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<meta chartset="UTF-8">
+	<head>
+		<title>
+			JSON Looping
+		</title>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript">
+			var json =  $.getJSON('gp_data.json', function(data) {
+				var items = [];
+				var data = 	[
+							{"label":"Average_Office_and_General_Business_Expenses_from_Self_Employment", "value":0},
+							{"label":"Average_Premises_Expenses_from_Self_Employment", "value":0},
+							{"label":"Average_Employee_Expenses_from_Self_Employment", "value":0},
+							{"label":"Average_Car_and_Travel_Expenses_from_Self_Employment", "value":0},
+							{"label":"Average_Interest_Expenses_from_Self_Employment", "value":0},
+							{"label":"Average_Other_Expenses_from_Self_Employment", "value":0}
+						];
+
+				$.each(data, function(key, val) { // should only be one element, since gps is the root element
+					items.push(val);
+				});
+
+				for(i = 0; i < items[0].length; i++) { // loop over all of the 
+					$.each(items[0][i], function(k, v) {
+						switch(k) {
+							case "Average_Office_and_General_Business_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									data[0].value += v;		
+								}
+							break;
+							case "Average_Premises_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									data[1].value += v;		
+								}
+							break;
+							case "Average_Employee_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									data[2].value += v;		
+								}
+							break;
+							case "Average_Car_and_Travel_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									data[3].value += v;		
+								}
+							break;
+							case "Average_Interest_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									data[4].value += v;		
+								}
+							break;							
+							case "Average_Other_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									data[5].value += v;		
+								}
+							break;
+
+						}
+
+					});				
+				}
+				console.log(data);
+			}
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
