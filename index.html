@@ -8,6 +8,15 @@
 			body {
 				padding-top: 60px;
 			}
+			.slice text {
+				font-size: 8pt;
+				font-family: Arial;			
+			}
+			.legend {
+				position: absolute;
+				top: 140px; 
+				left: 820px;		
+			}
 		</style>
 	</head>
 	<body>
@@ -22,7 +31,7 @@
 	          	<a class="brand" href="#">na8g09</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-						<li><a href="#">First Vis</a></li>
+						<li><a href="#">Where?</a></li>
 						<li><a href="#">Second Vis</a></li>
 					</ul>
 				</div>
@@ -30,10 +39,128 @@
 			</div>
 		</div>
 		<div class="container">
-			<h1>First Visualization</h1>
+			<h1>On what do GPs spend their expense claims?</h1>
+			<div class="pie">
+			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript">
+			var myData = 	[	{"label":"Office and General Business", "value":0},
+						{"label":"Premises Expenses", "value":0},
+						{"label":"Employee Expenses", "value":0},
+						{"label":"Car and Travel Expenses", "value":0},
+						{"label":"Interest Expenses", "value":0},
+						{"label":"Other Expenses", "value":0}
+					];
+
+			$.getJSON('gp_data.json', function(data, error) {
+				var items = [];
+		
+				$.each(data, function(key, val) { // should only be one element, since gps is the root element
+					items.push(val);
+				});
+
+				for(i = 0; i < items[0].length; i++) { // loop over all of the
+
+					$.each(items[0][i], function(k, v) {
+						switch(k) {
+							case "Average_Office_and_General_Business_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									myData[0].value += v;		
+								}
+							break;
+							case "Average_Premises_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									myData[1].value += v;		
+								}
+							break;
+							case "Average_Employee_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									myData[2].value += v;		
+								}
+							break;
+							case "Average_Car_and_Travel_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									myData[3].value += v;		
+								}
+							break;
+							case "Average_Interest_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									myData[4].value += v;		
+								}
+							break;							
+							case "Average_Other_Expenses_from_Self_Employment_£":
+								if( v != "-" && v != null) {
+									myData[5].value += v;		
+								}
+							break;
+
+						}
+
+					});				
+				}
+				draw();	
+			});
+			function draw() { 
+				var 	w = 800, 
+					h = 400, 
+					r = 200,
+					color = d3.scale.category20();
+
+
+				var vis = d3.select("div.pie")
+					.append("svg:svg")
+					.data([myData])
+						.attr("width", w)
+						.attr("height", h)
+					.append("svg:g")
+						.attr("transform", "translate(" + r + "," + r + ")")
+
+
+
+				var arc = d3.svg.arc()
+					.outerRadius(r);
+
+				var pie = d3.layout.pie()
+					.value(function(d) { return d.value } );
+		
+				var arcs = vis.selectAll("g.slice")
+					.data(pie)
+					.enter()
+					.append("svg:g")
+						.attr("class", "slice");
+			
+				arcs.append("svg:path")
+					.transition()
+					.attr("fill", function(d, i) { return color(i); } )
+					.attr("d", arc);
+
+
+	
+				var legend = d3.select("div.pie").append("svg")
+				      .attr("class", "legend")
+				      .attr("width", 300)
+				      .attr("height", 150)
+				    .selectAll("g")
+				      .data(color.domain().slice().reverse())
+				    .enter().append("g")
+				      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+				  legend.append("rect")
+				      .attr("width", 18)
+				      .attr("height", 18)
+				      .style("fill", color);
+
+				  legend.append("text")
+				      .attr("x", 24)
+				      .attr("y", 9)
+				      .attr("dy", ".35em")
+				      .text(function(d) { return myData[d].label; });
+			
+
+			}
+		</script>
 	</body>
 </html>

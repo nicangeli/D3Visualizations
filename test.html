@@ -7,62 +7,100 @@
 		</title>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<style type="text/css">
+			.portion text {
+				font-size: 16pt;
+				font-family: Arial;			
+			}
+		</style>
 		<script type="text/javascript">
-			var json =  $.getJSON('gp_data.json', function(data) {
-				var items = [];
-				var data = 	[
-							{"label":"Average_Office_and_General_Business_Expenses_from_Self_Employment", "value":0},
-							{"label":"Average_Premises_Expenses_from_Self_Employment", "value":0},
-							{"label":"Average_Employee_Expenses_from_Self_Employment", "value":0},
-							{"label":"Average_Car_and_Travel_Expenses_from_Self_Employment", "value":0},
-							{"label":"Average_Interest_Expenses_from_Self_Employment", "value":0},
-							{"label":"Average_Other_Expenses_from_Self_Employment", "value":0}
-						];
+			var myData = 	[
+						{"label":"Average_Office_and_General_Business_Expenses_from_Self_Employment", "value":0},
+						{"label":"Average_Premises_Expenses_from_Self_Employment", "value":0},
+						{"label":"Average_Employee_Expenses_from_Self_Employment", "value":0},
+						{"label":"Average_Car_and_Travel_Expenses_from_Self_Employment", "value":0},
+						{"label":"Average_Interest_Expenses_from_Self_Employment", "value":0},
+						{"label":"Average_Other_Expenses_from_Self_Employment", "value":0}
+					];
 
+			var json =  $.getJSON('gp_data.json', function(data, error) {
+				var items = [];
+		
 				$.each(data, function(key, val) { // should only be one element, since gps is the root element
 					items.push(val);
 				});
 
-				for(i = 0; i < items[0].length; i++) { // loop over all of the 
+				for(i = 0; i < items[0].length; i++) { // loop over all of the
+
 					$.each(items[0][i], function(k, v) {
 						switch(k) {
 							case "Average_Office_and_General_Business_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									data[0].value += v;		
+									myData[0].value += v;		
 								}
 							break;
 							case "Average_Premises_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									data[1].value += v;		
+									myData[1].value += v;		
 								}
 							break;
 							case "Average_Employee_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									data[2].value += v;		
+									myData[2].value += v;		
 								}
 							break;
 							case "Average_Car_and_Travel_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									data[3].value += v;		
+									myData[3].value += v;		
 								}
 							break;
 							case "Average_Interest_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									data[4].value += v;		
+									myData[4].value += v;		
 								}
 							break;							
 							case "Average_Other_Expenses_from_Self_Employment_£":
 								if( v != "-" && v != null) {
-									data[5].value += v;		
+									myData[5].value += v;		
 								}
 							break;
 
 						}
 
 					});				
-				}
-				console.log(data);
-			}
+				}	
+			});
+
+			var width = 300, height = 300, radius = 100, color = d3.scale.category20c();
+
+		 	var vis = d3.select("body")
+        			.append("svg:svg")              //create the SVG element inside the <body>
+        			.data([myData])                   //associate our data with the document
+          				.attr("width", width)           //set the width and height of our visualization (these will be attributes of the <svg> 
+					.attr("height", height)
+        			.append("svg:g")                //make a group to hold our pie chart
+            			.attr("transform", "translate(" + radius + "," + radius + ")")
+
+
+			var arc = d3.svg.arc()
+				.outerRadius(radius);
+			var pie = d3.layout.pie()
+				.value(function(d) { return d.value; });
+			
+			var arcs = vis.selectAll("g.portion")
+				.data(pie)
+				.enter()
+					.append("svg:g")
+						.attr("class", "portion");
+
+			arcs.append("svg:path")
+				.attr("fill", function(d, i) { return color(i); } )
+				.attr("d", arc);
+
+			arcs.append("svg:text")
+				.attr("transform", function(d) { d.innerRadius = 0; d.outerRadius = r; return "translate(" + arc.centroid(d) + ")"; })
+				.attr("text-anchor", "middle")
+				.text(function(d, i) { return data[i].label; });
 
 		</script>
 	</head>
