@@ -1,0 +1,5174 @@
+[
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "GP_Type",
+          "selectBlank": false,
+          "columnName": "GP_Type",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": " under an Open Government Licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/)",
+                "l": " under an Open Government Licence (http://www.nationalarchives.gov.uk/doc/open-government-licence/)"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    }
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column GP_Type",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GP_Type",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Contactor"
+        ],
+        "to": "Contractor"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column Contract_Type",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Contract_Type",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "GPMS"
+        ],
+        "to": "General Practitioners Medical Services"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column Contract_Type",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Contract_Type",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "gpms"
+        ],
+        "to": "General Practitioners Medical Services"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column Contract_Type",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Contract_Type",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "GMS"
+        ],
+        "to": "General Medical Services"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column Contract_Type",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Contract_Type",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "PMS"
+        ],
+        "to": "Personal Medical Services"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column Country",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Country",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Northern_Ireland"
+        ],
+        "to": "Northern Ireland"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column Country",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Country",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "NI"
+        ],
+        "to": "Northern Ireland"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Gender using expression grel:cells[\"Range_of_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Gender",
+    "expression": "grel:cells[\"Range_of_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Income_Before_Tax_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Age_Band using expression grel:cells[\"Range_of_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Age_Band",
+    "expression": "grel:cells[\"Range_of_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Income_Before_Tax_from_Self_Employment_£ using expression grel:cells[\"Average_Gross_Earnings_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Gross_Earnings_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Estimated_Population using expression grel:cells[\"Average_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Estimated_Population",
+    "expression": "grel:cells[\"Average_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Income_Before_Tax_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Effective_Returns using expression grel:cells[\"Standard_Error_of_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Effective_Returns",
+    "expression": "grel:cells[\"Standard_Error_of_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Self_Employment_£ using expression grel:cells[\"Expenses_to_Earnings_Ratio_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Self_Employment_£",
+    "expression": "grel:cells[\"Expenses_to_Earnings_Ratio_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Expenses_to_Earnings_Ratio_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Expenses_to_Earnings_Ratio_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Expenses_from_Self_Employment_£ using expression grel:cells[\"Median_Gross_Earnings_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Median_Gross_Earnings_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Gross_Earnings_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Gross_Earnings_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Income_Before_Tax_from_Self_Employment_£ using expression grel:cells[\"Median_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "grel:cells[\"Median_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Income_Before_Tax_£ using expression grel:cells[\"Median_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Median_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Income_Before_Tax_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Expenses_to_Earnings_Ratio_% using expression grel:cells[\"Average_Gross_Earnings_from_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Expenses_to_Earnings_Ratio_%",
+    "expression": "grel:cells[\"Average_Gross_Earnings_from_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Employment_£ using expression grel:cells[\"Standard_Error_of_Average_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Employment_£",
+    "expression": "grel:cells[\"Standard_Error_of_Average_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Average_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Average_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Gross_Earnings_£ using expression grel:cells[\"Median_Total_Gross_Earnings_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Gross_Earnings_£",
+    "expression": "grel:cells[\"Median_Total_Gross_Earnings_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Gross_Earnings_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Gross_Earnings_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Expenses_£ using expression grel:cells[\"Median_Total_Expenses_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Expenses_£",
+    "expression": "grel:cells[\"Median_Total_Expenses_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Expenses_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Expenses_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Income_Before_Tax_£ using expression grel:cells[\"Median_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Median_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Average_Total_Income_Before_Tax_£ using expression grel:cells[\"Combined_Weighted_Average_Total_Gross_Income_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Average_Total_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Combined_Weighted_Average_Total_Gross_Income_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Gross_Income_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Gross_Income_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Count_of_GPs using expression grel:cells[\"Column 54\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Count_of_GPs",
+    "expression": "grel:cells[\"Column 54\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Column 54 using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Column 54",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Percentage_of_GPs using expression grel:cells[\"Column 55\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Percentage_of_GPs",
+    "expression": "grel:cells[\"Column 55\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Column 55 using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Column 55",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Cumulative_Percentage_of_GPs using expression grel:cells[\"Column 56\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Cumulative_Percentage_of_GPs",
+    "expression": "grel:cells[\"Column 56\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Column 56 using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Column 56",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Gender using expression grel:cells[\"Range_of_Gross_Earnings_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Gender",
+    "expression": "grel:cells[\"Range_of_Gross_Earnings_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Gross_Earnings_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Gross_Earnings_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Age_Band using expression grel:cells[\"Range_of_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Age_Band",
+    "expression": "grel:cells[\"Range_of_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Gross_Earnings_from_Self_Employment_£ using expression grel:cells[\"Range_of_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Gross_Earnings_from_Self_Employment_£",
+    "expression": "grel:cells[\"Range_of_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Income_Before_Tax_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Expenses_from_Self_Employment_£ using expression grel:cells[\"Range_of_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Range_of_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Income_Before_Tax_from_Self_Employment_£ using expression grel:cells[\"Estimated_Population\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "grel:cells[\"Estimated_Population\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Estimated_Population using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Estimated_Population",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Range_of_Total_Income_Before_Tax_£ using expression grel:cells[\"Effective_Returns\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Range_of_Total_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Effective_Returns\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Effective_Returns using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "row.starred",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Starred Rows",
+          "selectBlank": false,
+          "columnName": "",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Effective_Returns",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Estimated_Population using expression grel:cells[\"Average_Gross_Earnings_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Estimated_Population",
+    "expression": "grel:cells[\"Average_Gross_Earnings_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Effective_Returns using expression grel:cells[\"Average_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Effective_Returns",
+    "expression": "grel:cells[\"Average_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Self_Employment_£ using expression grel:cells[\"Average_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Income_Before_Tax_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Expenses_from_Self_Employment_£ using expression grel:cells[\"Standard_Error_of_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Standard_Error_of_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Income_Before_Tax_from_Self_Employment_£ using expression grel:cells[\"Expenses_to_Earnings_Ratio_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "grel:cells[\"Expenses_to_Earnings_Ratio_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Expenses_to_Earnings_Ratio_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Expenses_to_Earnings_Ratio_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Income_Before_Tax_£ using expression grel:cells[\"Median_Gross_Earnings_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Median_Gross_Earnings_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Gross_Earnings_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Gross_Earnings_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Expenses_to_Earnings_Ratio_% using expression grel:cells[\"Median_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Expenses_to_Earnings_Ratio_%",
+    "expression": "grel:cells[\"Median_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Gross_Earnings_from_Self_Employment_£ using expression grel:cells[\"Median_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Gross_Earnings_from_Self_Employment_£",
+    "expression": "grel:cells[\"Median_Income_Before_Tax_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Income_Before_Tax_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Expenses_from_Self_Employment_£ using expression grel:cells[\"Average_Gross_Earnings_from_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Gross_Earnings_from_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Income_Before_Tax_from_Self_Employment_£ using expression grel:cells[\"Average_Total_Gross_Earnings_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Total_Gross_Earnings_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Gross_Earnings_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Gross_Earnings_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Employment_£ using expression grel:cells[\"Average_Total_Expenses_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Employment_£",
+    "expression": "grel:cells[\"Average_Total_Expenses_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Expenses_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Expenses_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Gross_Earnings_£ using expression grel:cells[\"Average_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Gross_Earnings_£",
+    "expression": "grel:cells[\"Average_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Expenses_£ using expression grel:cells[\"Standard_Error_of_Average_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Expenses_£",
+    "expression": "grel:cells[\"Standard_Error_of_Average_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Average_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Average_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Income_Before_Tax_£ using expression grel:cells[\"Median_Total_Gross_Earnings_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Median_Total_Gross_Earnings_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Gross_Earnings_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Gross_Earnings_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Average_Total_Income_Before_Tax_£ using expression grel:cells[\"Median_Total_Expenses_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Average_Total_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Median_Total_Expenses_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Expenses_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Expenses_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Gross_Earnings_£ using expression grel:cells[\"Median_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Gross_Earnings_£",
+    "expression": "grel:cells[\"Median_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Expenses_£ using expression grel:cells[\"Combined_Weighted_Average_Total_Gross_Income_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Expenses_£",
+    "expression": "grel:cells[\"Combined_Weighted_Average_Total_Gross_Income_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Gross_Income_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Gross_Income_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Income_Before_Tax_£ using expression grel:cells[\"Combined_Weighted_Average_Total_Expenses_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Combined_Weighted_Average_Total_Expenses_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Expenses_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Expenses_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Gross_Income_£ using expression grel:cells[\"Combined_Weighted_Average_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Gross_Income_£",
+    "expression": "grel:cells[\"Combined_Weighted_Average_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Expenses_£ using expression grel:cells[\"Standard_Error_of_Combined_Weighted_Average_Total_Income_Before_Tax_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Expenses_£",
+    "expression": "grel:cells[\"Standard_Error_of_Combined_Weighted_Average_Total_Income_Before_Tax_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Combined_Weighted_Average_Total_Income_Before_Tax_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Combined_Weighted_Average_Total_Income_Before_Tax_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Income_Before_Tax_£ using expression grel:cells[\"Average_Office_and_General_Business_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Average_Office_and_General_Business_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Office_and_General_Business_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Office_and_General_Business_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Combined_Weighted_Average_Total_Income_Before_Tax_£ using expression grel:cells[\"Average_Premises_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Combined_Weighted_Average_Total_Income_Before_Tax_£",
+    "expression": "grel:cells[\"Average_Premises_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Premises_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Premises_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Office_and_General_Business_Expenses_from_Self_Employment_£ using expression grel:cells[\"Average_Employee_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Office_and_General_Business_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Employee_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Employee_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Employee_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Premises_Expenses_from_Self_Employment_£ using expression grel:cells[\"Average_Car_and_Travel_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Premises_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Car_and_Travel_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Car_and_Travel_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Car_and_Travel_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Employee_Expenses_from_Self_Employment_£ using expression grel:cells[\"Average_Interest_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Employee_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Interest_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Interest_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Interest_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Car_and_Travel_Expenses_from_Self_Employment_£ using expression grel:cells[\"Average_Other_Expenses_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Car_and_Travel_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Other_Expenses_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Other_Expenses_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Other_Expenses_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Interest_Expenses_from_Self_Employment_£ using expression grel:cells[\"Average_Net_Capital_Allowances_from_Self_Employment_£\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Interest_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"Average_Net_Capital_Allowances_from_Self_Employment_£\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Net_Capital_Allowances_from_Self_Employment_£ using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Net_Capital_Allowances_from_Self_Employment_£",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Other_Expenses_from_Self_Employment_£ using expression grel:cells[\"GPs_with_Zero_Total_Expenses_from_Self_Employment_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Other_Expenses_from_Self_Employment_£",
+    "expression": "grel:cells[\"GPs_with_Zero_Total_Expenses_from_Self_Employment_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Total_Expenses_from_Self_Employment_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Total_Expenses_from_Self_Employment_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Net_Capital_Allowances_from_Self_Employment_£ using expression grel:cells[\"GPs_with_Zero_Office_and_General_Business_Expenses_from_Self_Employment_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Net_Capital_Allowances_from_Self_Employment_£",
+    "expression": "grel:cells[\"GPs_with_Zero_Office_and_General_Business_Expenses_from_Self_Employment_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Office_and_General_Business_Expenses_from_Self_Employment_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Office_and_General_Business_Expenses_from_Self_Employment_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Total_Expenses_from_Self_Employment_% using expression grel:cells[\"GPs_with_Zero_Premises_Expenses_from_Self_Employment_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Total_Expenses_from_Self_Employment_%",
+    "expression": "grel:cells[\"GPs_with_Zero_Premises_Expenses_from_Self_Employment_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Premises_Expenses_from_Self_Employment_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Premises_Expenses_from_Self_Employment_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Office_and_General_Business_Expenses_from_Self_Employment_% using expression grel:cells[\"GPs_with_Zero_Employee_Expenses_from_Self_Employment_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Office_and_General_Business_Expenses_from_Self_Employment_%",
+    "expression": "grel:cells[\"GPs_with_Zero_Employee_Expenses_from_Self_Employment_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Employee_Expenses_from_Self_Employment_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Employee_Expenses_from_Self_Employment_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Premises_Expenses_from_Self_Employment_% using expression grel:cells[\"GPs_with_Zero_Car_and_Travel_Expenses_from_Self_Employment_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Premises_Expenses_from_Self_Employment_%",
+    "expression": "grel:cells[\"GPs_with_Zero_Car_and_Travel_Expenses_from_Self_Employment_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Car_and_Travel_Expenses_from_Self_Employment_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Car_and_Travel_Expenses_from_Self_Employment_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Employee_Expenses_from_Self_Employment_% using expression grel:cells[\"GPs_with_Zero_Interest_Expenses_from_Self_Employment_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Employee_Expenses_from_Self_Employment_%",
+    "expression": "grel:cells[\"GPs_with_Zero_Interest_Expenses_from_Self_Employment_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Interest_Expenses_from_Self_Employment_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Interest_Expenses_from_Self_Employment_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Car_and_Travel_Expenses_from_Self_Employment_% using expression grel:cells[\"GPs_with_Zero_Other_Expenses_from_Self_Employment_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Car_and_Travel_Expenses_from_Self_Employment_%",
+    "expression": "grel:cells[\"GPs_with_Zero_Other_Expenses_from_Self_Employment_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Other_Expenses_from_Self_Employment_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Other_Expenses_from_Self_Employment_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Interest_Expenses_from_Self_Employment_% using expression grel:cells[\"GPs_with_Zero_Net_Capital_Allowances_Expenses_from_Self_Employment_%\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Interest_Expenses_from_Self_Employment_%",
+    "expression": "grel:cells[\"GPs_with_Zero_Net_Capital_Allowances_Expenses_from_Self_Employment_%\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Net_Capital_Allowances_Expenses_from_Self_Employment_% using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Net_Capital_Allowances_Expenses_from_Self_Employment_%",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Other_Expenses_from_Self_Employment_% using expression grel:cells[\"Count_of_GPs\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Other_Expenses_from_Self_Employment_%",
+    "expression": "grel:cells[\"Count_of_GPs\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Count_of_GPs using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Count_of_GPs",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Net_Capital_Allowances_Expenses_from_Self_Employment_% using expression grel:cells[\"Percentage_of_GPs\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Net_Capital_Allowances_Expenses_from_Self_Employment_%",
+    "expression": "grel:cells[\"Percentage_of_GPs\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Percentage_of_GPs using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Percentage_of_GPs",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Count_of_GPs using expression grel:cells[\"Cumulative_Percentage_of_GPs\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Count_of_GPs",
+    "expression": "grel:cells[\"Cumulative_Percentage_of_GPs\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Cumulative_Percentage_of_GPs using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Cumulative_Percentage_of_GPs",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Percentage_of_GPs using expression grel:cells[\"Column 53\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Percentage_of_GPs",
+    "expression": "grel:cells[\"Column 53\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Column 53 using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Column 53",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Cumulative_Percentage_of_GPs using expression grel:cells[\"Column 54\"].value",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Cumulative_Percentage_of_GPs",
+    "expression": "grel:cells[\"Column 54\"].value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Column 54 using expression null",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "Column 54",
+    "expression": "null",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/row-star",
+    "description": "Unstar rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    },
+    "starred": false
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Employment_£ using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Employment_£",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Employment_£ using expression grel:value.slice(2)",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Employment_£",
+    "expression": "grel:value.slice(2)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Estimated_Population using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Estimated_Population",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Expenses_from_Self_Employment_£ using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Expenses_from_Self_Employment_£",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Estimated_Population using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Estimated_Population",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Effective_Returns using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Effective_Returns",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Income_Before_Tax_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Income_Before_Tax_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Income_Before_Tax_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Expenses_to_Earnings_Ratio_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Expenses_to_Earnings_Ratio_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Gross_Earnings_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Gross_Earnings_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Income_Before_Tax_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Income_Before_Tax_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Gross_Earnings_from_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Gross_Earnings_from_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Gross_Earnings_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Gross_Earnings_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Expenses_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Expenses_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Total_Income_Before_Tax_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Total_Income_Before_Tax_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Average_Total_Income_Before_Tax_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Average_Total_Income_Before_Tax_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Gross_Earnings_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Gross_Earnings_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Expenses_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Expenses_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Median_Total_Income_Before_Tax_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Median_Total_Income_Before_Tax_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Gross_Income_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Gross_Income_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Expenses_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Expenses_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Combined_Weighted_Average_Total_Income_Before_Tax_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Combined_Weighted_Average_Total_Income_Before_Tax_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Standard_Error_of_Combined_Weighted_Average_Total_Income_Before_Tax_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Standard_Error_of_Combined_Weighted_Average_Total_Income_Before_Tax_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Office_and_General_Business_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Office_and_General_Business_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Premises_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Premises_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Employee_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Employee_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Car_and_Travel_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Car_and_Travel_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Interest_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Interest_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Other_Expenses_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Other_Expenses_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Average_Net_Capital_Allowances_from_Self_Employment_£ using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Average_Net_Capital_Allowances_from_Self_Employment_£",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Total_Expenses_from_Self_Employment_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Total_Expenses_from_Self_Employment_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Office_and_General_Business_Expenses_from_Self_Employment_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Office_and_General_Business_Expenses_from_Self_Employment_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Premises_Expenses_from_Self_Employment_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Premises_Expenses_from_Self_Employment_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Employee_Expenses_from_Self_Employment_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Employee_Expenses_from_Self_Employment_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Car_and_Travel_Expenses_from_Self_Employment_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Car_and_Travel_Expenses_from_Self_Employment_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Interest_Expenses_from_Self_Employment_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Interest_Expenses_from_Self_Employment_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Net_Capital_Allowances_Expenses_from_Self_Employment_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Net_Capital_Allowances_Expenses_from_Self_Employment_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column GPs_with_Zero_Other_Expenses_from_Self_Employment_% using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "GPs_with_Zero_Other_Expenses_from_Self_Employment_%",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Count_of_GPs using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Count_of_GPs",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Percentage_of_GPs using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Percentage_of_GPs",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Percentage_of_GPs using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Percentage_of_GPs",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Cumulative_Percentage_of_GPs using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Cumulative_Percentage_of_GPs",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Estimated_Population using expression grel:value.replace(',', '').toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Estimated_Population",
+    "expression": "grel:value.replace(',', '').toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Range_of_Income_Before_Tax_from_Self_Employment_£",
+          "selectBlank": false,
+          "columnName": "Range_of_Income_Before_Tax_from_Self_Employment_£",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "Total",
+                "l": "Total"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Range_of_Gross_Earnings_from_Self_Employment_£",
+          "selectBlank": false,
+          "columnName": "Range_of_Gross_Earnings_from_Self_Employment_£",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "Total",
+                "l": "Total"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Range_of_Expenses_from_Self_Employment_£",
+          "selectBlank": false,
+          "columnName": "Range_of_Expenses_from_Self_Employment_£",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "Total",
+                "l": "Total"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "expression": "value",
+          "invert": false,
+          "selectError": false,
+          "omitError": false,
+          "name": "Range_of_Total_Income_Before_Tax_£",
+          "selectBlank": false,
+          "columnName": "Range_of_Total_Income_Before_Tax_£",
+          "omitBlank": false,
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "Total",
+                "l": "Total"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    }
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "row.starred",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": false,
+          "name": "Starred Rows",
+          "omitBlank": false,
+          "columnName": "",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "row-based"
+    }
+  }
+]
