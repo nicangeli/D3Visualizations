@@ -7,23 +7,20 @@
 		<style>
 			body {
 				padding-top: 60px;
-			}
-			.slice text {
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				margin: auto;
+				position: relative;
+				width: 960px;
+				}
+			.pie .slice text {
 				font-size: 8pt;
 				font-family: Arial;			
 			}
-			.legend {
+			.pie .legend {
 				position: absolute;
 				top: 140px; 
 				left: 520px;		
 			}
-			body {
-			  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			  margin: auto;
-			  position: relative;
-			  width: 960px;
-			}
-
 			text {
 			  font: 10px sans-serif;
 			}
@@ -40,6 +37,23 @@
 				left: 520px;
 			}
 
+			.axis path, .axis line {
+				fill: none;
+				stroke: #000000;
+				shape-rendering: crispEdges;
+			}
+
+			.dot {
+				fill: #000000;
+			}
+
+			.male {
+				fill: #87cefa;
+			}
+			.female {
+				fill: #ee82ee;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -54,8 +68,8 @@
 	          	<a class="brand" href="#">na8g09</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-						<li><a href="#">Where?</a></li>
-						<li><a href="#">Second Vis</a></li>
+						<li><a href="#what">What?</a></li>
+						<li><a href="#more">More?</a></li>
 					</ul>
 				</div>
 			</div>
@@ -67,228 +81,21 @@
 				<label class="radio"><input class="gender" type="radio" name="dataset" value="Male" >Male</label>
 				<label class="radio"><input class="gender" type="radio" name="dataset" value="Female" >Female</label>
 			</form>
-			<h1>What do GPs spend their expense claims on?</h1>
+			<h3><a name"what"></a>What do GPs spend their expense claims on?</h3>
 			<div class="pie">
 				<p>Hover over chart to see more details</p>
 			</div>
 		</div>
 		<hr />
 		<div class="container">
-			<h1>Do GPs spend more on expenses when they're working for the NHS or privately? And does the size of their practice matter?</h1>
+			<h3><a name="more"></a>Do GPs spend more on expenses when they're working for the NHS or privately? And does their gender or the size of their practice matter?</h3>
+			<div class="scatter">
+			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="http://d3js.org/d3.v3.min.js"></script>
-		<script type="text/javascript">
-			var allData = 	[	{"label":"Office and General Business", "value":0},
-						{"label":"Premises Expenses", "value":0},
-						{"label":"Employee Expenses", "value":0},
-						{"label":"Car and Travel Expenses", "value":0},
-						{"label":"Interest Expenses", "value":0},
-						{"label":"Other Expenses", "value":0}
-					];
-
-			var maleData = 	[	{"label":"Office and General Business", "value":0},
-						{"label":"Premises Expenses", "value":0},
-						{"label":"Employee Expenses", "value":0},
-						{"label":"Car and Travel Expenses", "value":0},
-						{"label":"Interest Expenses", "value":0},
-						{"label":"Other Expenses", "value":0}
-					];
-
-			var femaleData = 	[	{"label":"Office and General Business", "value":0},
-						{"label":"Premises Expenses", "value":0},
-						{"label":"Employee Expenses", "value":0},
-						{"label":"Car and Travel Expenses", "value":0},
-						{"label":"Interest Expenses", "value":0},
-						{"label":"Other Expenses", "value":0}
-					];
-
-			$.getJSON('gp_data.json', function(data, error) {
-				var items = [];
-		
-				$.each(data, function(key, val) { // should only be one element, since gps is the root element
-					items.push(val);
-				});
-
-				for(i = 0; i < items[0].length; i++) { // loop over all of the
-
-					$.each(items[0][i], function(k, v) {
-						switch(k) {
-							case "Average_Office_and_General_Business_Expenses_from_Self_Employment_£":
-								if( v != "-" && v != null) {
-									allData[0].value += v;
-									if(items[0][i].Gender == "Male") {
-										maleData[0].value += v;
-									} else if(items[0][i].Gender == "Female") {
-										femaleData[0].value += v;
-									}
-								}
-							break;
-							case "Average_Premises_Expenses_from_Self_Employment_£":
-								if( v != "-" && v != null) {
-									allData[1].value += v;		
-									if(items[0][i].Gender == "Male") {
-										maleData[1].value += v;
-									} else if(items[0][i].Gender == "Female") {
-										femaleData[1].value += v;
-									}
-								}
-							break;
-							case "Average_Employee_Expenses_from_Self_Employment_£":
-								if( v != "-" && v != null) {
-									allData[2].value += v;	
-									if(items[0][i].Gender == "Male") {
-										maleData[2].value += v;
-									} else if(items[0][i].Gender == "Female") {
-										femaleData[2].value += v;
-									}
-								}
-							break;
-							case "Average_Car_and_Travel_Expenses_from_Self_Employment_£":
-								if( v != "-" && v != null) {
-									allData[3].value += v;
-									if(items[0][i].Gender == "Male") {
-										maleData[3].value += v;
-									} else if(items[0][i].Gender == "Female") {
-										femaleData[3].value += v;
-									}	
-								}
-							break;
-							case "Average_Interest_Expenses_from_Self_Employment_£":
-								if( v != "-" && v != null) {
-									allData[4].value += v;
-									if(items[0][i].Gender == "Male") {
-										maleData[4].value += v;
-									} else if(items[0][i].Gender == "Female") {
-										femaleData[4].value += v;
-									}		
-								}
-							break;							
-							case "Average_Other_Expenses_from_Self_Employment_£":
-								if( v != "-" && v != null) {
-									allData[5].value += v;
-									if(items[0][i].Gender == "Male") {
-										maleData[5].value += v;
-									} else if(items[0][i].Gender == "Female") {
-										femaleData[5].value += v;
-									}		
-								}
-							break;
-
-						}
-
-					});				
-				}
-				draw(getCurrentDataset());	
-			});
-			function draw(drawingData) { 
-				var 	w = 800, 
-						h = 400, 
-						r = Math.min(w, h)/2,
-						color = d3.scale.category20();
-
-				var pie = d3.layout.pie()
-					.sort(null);
-
-				var arc = d3.svg.arc()
-					.outerRadius(r - 100)
-					.innerRadius(r - 20);
-
-
-				var svg = d3.select("div.pie")
-					.append("svg:svg")
-						.attr("width", w)
-						.attr("height", h)
-					.append("svg:g")
-						.attr("transform", "translate(" + r + "," + r + ")")
-
-
-				var path = svg.selectAll("path")
-					.data(pie(buildArray(allData)))
-					.enter()
-					.append("path")
-						.attr("fill", function(d, i) { return color(i); })
-						.attr("d", arc)
-						.attr("class", "slice");
-		
-
-				d3.selectAll(".slice").on("mouseover", function(d) {
-					var percentage = calculatePercentage(d.value);
-					d3.select(".pie p")
-						.html(percentage + "% of " + getGender() + " GP  expense money was spent on " + calculateCategory(d.value) + " that's a staggering £" + d.value);
-				});
-
-				d3.selectAll(".gender").on("change", function() {
-					path = path.data(pie(buildArray(getCurrentDataset())));
-					path.transition().attr("d", arc);
-				});
-	
-				var legend = d3.select("div.pie").append("svg")
-				      .attr("class", "legend")
-				      .attr("width", 300)
-				      .attr("height", 150)
-				    .selectAll("g")
-				      .data(color.domain().slice().reverse())
-				    .enter().append("g")
-				      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-				  legend.append("rect")
-				      .attr("width", 18)
-				      .attr("height", 18)
-				      .style("fill", color);
-
-				  legend.append("text")
-				      .attr("x", 24)
-				      .attr("y", 9)
-				      .attr("dy", ".35em")
-				      .text(function(d) { return allData[d].label; });
-			
-
-			}
-
-			function buildArray(dataset) {
-				var array = [];
-				for(var i = 0; i < dataset.length; i++) {
-					array.push(dataset[i].value);
-				}
-				return array;
-			}
-
-			function getCurrentDataset() {
-				var gender = $('input[name=dataset]:checked', '#gender_form').val();
-				if(gender == 'All') {
-					return allData;
-				} else if(gender == 'Male') {
-					return maleData;
-				} else if(gender == 'Female') {
-					return femaleData;
-				}
-				
-			}
-
-			function calculateCategory(number) {
-				var dataset = getCurrentDataset();
-				var index = 0;
-				for(var i = 0; i < dataset.length; i++) {
-					if(dataset[i].value == number) {
-						return dataset[i].label;
-					}
-				}
-				return "ERROR"
-			}
-
-			function getGender() {
-				return $('input[name=dataset]:checked', '#gender_form').val();
-			}
-
-			function calculatePercentage(number) {
-				var sum = 0;
-				for(var i = 0; i < getCurrentDataset().length; i++) {
-					sum += getCurrentDataset()[i].value;
-				}
-				return ((number/sum) * 100).toFixed(2);
-			}
-		</script>
+		<script src="pie.js"></script>
+		<script src="scatter.js"></script>
 	</body>
 </html>

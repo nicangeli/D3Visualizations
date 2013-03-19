@@ -1,32 +1,3 @@
-<!DOCTYPE html>
-<html>
-	<meta charset="utf-8">
-	<head>
-		<title>Scatter Plot</title>
-		<style>
-			body {
-				font: 10px sans-serif;
-			}
-			.axis path, .axis line {
-				fill: none;
-				stroke: #000000;
-				shape-rendering: crispEdges;
-			}
-			.dot {
-				fill: #000000;
-			}
-
-			.male {
-				fill: #87cefa;
-			}
-			.female {
-				fill: #ee82ee;
-			}
-		</style>
-	</head>
-	<body>
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-		<script type="text/javascript">
 			var margin = {top: 20, right: 20, bottom: 30, left: 40},
 				width = 960 - margin.left - margin.right,
 				height = 500 - margin.top - margin.bottom;
@@ -50,7 +21,7 @@
 				.scale(y)
 				.orient("left");
 
-			var svg = d3.select("body").append("svg")
+			var svg = d3.select("div.scatter").append("svg")
 					.attr("width", width + margin.left + margin.right)
 					.attr("height", height + margin.top + margin.bottom)
 				.append("g")
@@ -110,6 +81,8 @@
 						.attr("cx", function(d) { if(d.Average_Total_Expenses == "-") { return; } else { return x(d.Average_Total_Expenses); }})
 						.attr("cy", function(d) { if(d.Average_Expenses_from_Self_Employment == "-") { return; } else { return y(d.Average_Expenses_from_Self_Employment); }})
 						.attr("class", function(d) { if(d.Gender == "Male") { return "dot male"} else if(d.Gender == "Female") { return "dot female"} else { return "dot"}});
+
+					
 			});
 
 			function doWeHaveBothParts(d) {
@@ -119,6 +92,3 @@
 					return false;
 				}
 			}
-		</script>
-	</body>
-</html>
