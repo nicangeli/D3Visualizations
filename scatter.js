@@ -82,6 +82,15 @@
 						.attr("cy", function(d) { if(d.Average_Expenses_from_Self_Employment == "-") { return; } else { return y(d.Average_Expenses_from_Self_Employment); }})
 						.attr("class", function(d) { if(d.Gender == "Male") { return "dot male"} else if(d.Gender == "Female") { return "dot female"} else { return "dot"}});
 
+				$('svg circle').tipsy({
+					html: true,
+					gravity: 'e',
+					title: function() {
+						var d = this.__data__;
+						return d.Gender + " Private: £" + d.Average_Expenses_from_Self_Employment + " NHS: £" + d.Average_Total_Expenses;
+					}
+				});
+
 					
 			});
 
